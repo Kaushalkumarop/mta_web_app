@@ -1,0 +1,5 @@
+.overmarquee {
+    white-space: nowrap;
+    /* max-width: 15em; */
+    overflow: hidden;
+}

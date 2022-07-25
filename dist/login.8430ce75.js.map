@@ -1,0 +1,1 @@
+{"mappings":"AAAA,SAASA,SACLC,OAAOC,QAAQC,M","sources":["src/assets/js/custom.js"],"sourcesContent":["function goBack() {\r\n    window.history.back();\r\n}\r\n"],"names":["goBack","window","history","back"],"version":3,"file":"login.8430ce75.js.map"}

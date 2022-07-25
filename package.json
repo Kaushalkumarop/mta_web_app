@@ -1,0 +1,40 @@
+{
+  "name": "web_app_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "source": [
+    "src/index.html",
+    "src/login.html"
+  ],
+  "scripts": {
+    "start": "parcel ",
+    "clean": "node clean.js",
+    "dev": "node clean.js && parcel watch --public-url ./",
+    "build": "parcel build --public-url ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "parcel": "latest",
+    "parcel-reporter-static-files-copy": "^1.3.4",
+    "parcel-resolver-ignore": "^2.1.3",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "parcelIgnore": [
+    "assets/js/bootstrap.min.js"
+   
+  ],
+  "staticFiles": {
+    "staticPath": "src/assets",
+    "staticOutPath": "assets"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdarshHatkar/mta_web_app/issues"
+  },
+  "homepage": "https://github.com/AdarshHatkar/mta_web_app#readme"
+}

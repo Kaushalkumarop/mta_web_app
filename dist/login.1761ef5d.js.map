@@ -1,0 +1,1 @@
+{"mappings":"AAAA,SAAS,MAAM,GAAG;IACd,MAAM,CAAC,OAAO,CAAC,IAAI,EAAE,CAAC;CACzB","sources":["src/assets/js/custom.js"],"sourcesContent":["function goBack() {\r\n    window.history.back();\r\n}\r\n"],"names":[],"version":3,"file":"login.1761ef5d.js.map","sourceRoot":"../"}

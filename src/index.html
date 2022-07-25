@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting...</title>
+</head>
+
+<body>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/store.everything.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+    <Script>
+        // reading query
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        let u = params.u;
+
+        function fetch_data_fun() {
+            var bodyFormData = new URLSearchParams();
+            bodyFormData.append('u', u);
+
+
+            url = api_base+'web_app_init.php';
+
+
+            axios.post(url, bodyFormData)
+                .then(function (response) {
+                    res = response.data
+                    console.log(res);
+                    if (res.status == 0) {
+                        Swal.fire({
+                    title: res.msg,
+                    html: 'Use valid link to Access Web App ',
+
+                })
+                    }
+                    if (res.status == 1) {
+
+                        store.set('motap_app_data', {
+                            APP_NAME: res.APP_NAME,
+                            OW_ID: res.OW_ID,
+                            APP_V: res.APP_V,
+                            PLAN: res.PLAN,
+                            COUNTRY_CODE: res.COUNTRY_CODE,
+                        })
+
+                        location.replace('./play.html')
+                    }
+                    if (res.status == -1) {
+
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        fetch_data_fun()
+    </Script>
+</body>
+
+</html>

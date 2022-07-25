@@ -1,0 +1,8 @@
+{
+  "compress": {
+    "drop_console": false
+  },
+  "format": {
+    "comments": false
+  }
+}

@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["src/assets/css/primeOne.css"],"sourcesContent":[".overmarquee {\r\n    white-space: nowrap;\r\n    /* max-width: 15em; */\r\n    overflow: hidden;\r\n}"],"names":[],"version":3,"file":"login.4875aed8.css.map","sourceRoot":"../"}

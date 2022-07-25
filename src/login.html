@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="Primexop  An esport tournament application for BGMI, PUBG, FREE FIRE & LUDO , start your own esport tournament management application">
+    <meta name="keywords"
+        content="battleground mobile india, battlemania, BGMI, bgmi tournament app source code, call of duty tournament app, esport tournament, fantasy league, Fortnite tournament App, freefire tournament app, Ludo tournament, PUBG Lite Tournament app, pubg matches organizer app, pubg tournament app" />
+
+
+
+    <!-- vendor css -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+    <!-- primexop css  -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/primeOne.css">
+
+
+
+</head>
+
+<body>
+    <main class="pxop-full-width pxop-full-height">
+        <div class="container-fluid">
+            <div class="row d-flex">
+                <div class="col-xl-6 col-left">
+                    <div class="pxop-modal">
+                        <div class="pxop-mdl-header text-center">
+
+                            <h4 style="width: 100%;" class="m-0 overmarquee">Welcome to <span id="app_name"></span>
+                            </h4>
+
+                        </div>
+                        <div class="pxop-mdl-center pxop-full-height pb-6">
+                            <div class="content-section">
+                                <div class="pxop-content-listing">
+                                    <div class="profile-content text-black">
+                                        <h6 class="mt-1"></h6>
+
+                                        <form class="container profile-form mt-2" id="form">
+
+
+
+                                            <div id="email_div" class="form-group row pt-3">
+
+                                                <div id="id_div" class="col-12">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" id="email" name="email"
+                                                        class="form-control border-bottom"
+                                                        placeholder="Enter your Email here">
+                                                </div>
+                                            </div>
+                                            <div id="number_div" class="form-group row d-none pt-3">
+
+
+                                                <div class="col-4">
+                                                    <label class="overmarquee" for="country_code">Country Code</label>
+                                                    <select class="form-control border-bottom " name="country_code"
+                                                        id="country_code">
+
+                                                        <option value="91">+91(India)</option>
+                                                        <option value="880">+880(Bangladesh)</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-8">
+                                                    <label for="mobile_no">Mobile No</label>
+                                                    <input type="text" id="mobile_no" name="mobile_no"
+                                                        class="form-control border-bottom">
+
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" id="password" name="password"
+                                                        class="form-control border-bottom "
+                                                        placeholder="Enter your password here" autocomplete="password">
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                            <div class="form-group row  justify-content-center ">
+                                                <div class="col-6 pb-2 ">
+                                                    <button type="button" id="login_btn" onclick='login_fun()'
+                                                        value="email" class="btn btn-block btn-success">Login
+                                                        Now</button>
+
+                                                </div>
+                                                <div id="btn_div" class="col-8 pb-2 ">
+                                                    <button type="button" id="login_toggle_btn"
+                                                        onclick="method_toggle_fun()"
+                                                        class="btn btn-block btn-lightpink">Login with
+                                                        Number</button>
+
+                                                </div>
+                                                <div class="col-10 pb-2" id='cna_div'>
+                                                    <button type="button" id="cna_btn" onclick="cna_fun()"
+                                                        class="btn btn-block btn-primary">Create New Account</button>
+                                                </div>
+
+                                                <div class="col-8 pb-2">
+                                                    <button type="button" id="cs_btn"
+                                                     
+                                                        onclick="go_to_old_appw1('customer_support.php?back_url=login.html')"
+                                                        class="btn btn-block btn-secondary">Customer Support</button>
+                                                </div>
+                                                <div class="col-12 pb-2 d-none " id='ba_div'>
+                                                    <button type="button"
+                                                        onclick="openInBrowser('https://youtu.be/a2i17i31DMc')"
+                                                        class="btn btn-block btn-primary ">
+                                                        Build Your Multi Tournament App at Free of Cost</button>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                        <div class="text-center text-black">
+                                            <p>App Version : <span id="app_v"></span></p>
+                                        </div>
+                                        <div id='developer_credit_div' class="text-center text-black"
+                                            onclick="openInBrowser('https://primexop.com')">
+                                            <div class="credits">
+
+                                                Developed with<img style="margin:auto;" width="40px" height="40px"
+                                                    src="./assets/svg/heart.svg">
+                                                by
+                                                <strong style="color: #2398ff;">Primexop.com</strong>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-right m-auto">
+                    <div class="pxop-right-content">
+                        <!-- <img src="https://cdn.discordapp.com/attachments/846358722158264370/846383414771974194/500w.png" alt="logo" class="img-fluid img-responsive"> -->
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- vendor js  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <!-- primexop js  -->
+    <script src="assets/js/config.js"></script>
+    <script src="./assets/js/store.everything.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/primeOne.js"></script>
+    <script src="./assets/js/prime_interface.js"></script>
+    
+
+
+    <script>
+        // page init scripts 
+        document.getElementById('app_name').innerHTML = store.get('motap_app_data').APP_NAME;
+        document.getElementById('app_v').innerHTML = store.get('motap_app_data').APP_V;
+        checkOverflowText()
+
+        // check already logged in user details
+
+        if (store.get('motap_user_data')) {
+            // moving towards play page 
+            location.replace('./play.html')
+
+        }
+
+        // checking plan
+        if (store.get('motap_app_data').PLAN > 1) {
+
+            document.getElementById('developer_credit_div').classList.add('d-none');
+
+
+        }
+        if (store.get('motap_app_data').PLAN == 0) {
+
+            d_none(byId('ba_div'), false)
+
+
+        }
+
+    </script>
+
+
+
+    <script>
+        // login script
+
+        // getting elements
+        email_div = byId('email_div')
+        email = byId('email')
+        number_div = byId('number_div')
+        country_code = byId('country_code')
+        mobile_no = byId('mobile_no')
+        password = byId('password')
+        login_btn = byId('login_btn')
+        login_toggle_btn = byId('login_toggle_btn')
+        //    email_div = byId('email_div')
+
+
+
+        // btn_loading(login_btn, "Loading..", true)
+
+
+
+        function method_toggle_fun() {
+
+            if (login_btn.value == 'email') {
+                // console.log(login_btn.value)
+                login_btn.value = 'number'
+                d_none(email_div, true)
+                d_none(number_div, false)
+                login_toggle_btn.innerHTML = "Login with Number"
+
+
+            } else if (login_btn.value == 'number') {
+                // console.log(login_btn.value)
+                login_btn.value = 'email'
+                d_none(email_div, false)
+                d_none(number_div, true)
+                login_toggle_btn.innerHTML = "Login with Email"
+
+
+            }
+
+
+        }
+
+
+        function cna_fun() {
+            if (store.get('motap_app_data').PLAN == 0) {
+
+                Swal.fire({
+                    title: 'Free Plan of This app is Expired',
+                    html: 'Contact owner using Customer support <br> and tell him to activate free plan from owner panel',
+
+                })
+                return false
+            }
+            // location.href = 'register.php'
+            location.href =old_appw1_base+'register.php'
+        }
+        // login api
+
+        function login_fun() {
+            if (store.get('motap_app_data').PLAN == 0) {
+
+                Swal.fire({
+                    title: 'Free Plan of This app is Expired',
+                    html: 'Contact owner using Customer support <br> and tell him to activate free plan from owner panel',
+
+                })
+                return false
+            }
+            btn_loading(login_btn, "", true)
+            var bodyFormData = new URLSearchParams();
+            bodyFormData.append('OW_ID', store.get('motap_app_data').OW_ID);
+            bodyFormData.append('method', login_btn.value);
+            bodyFormData.append('email', email.value);
+            bodyFormData.append('country_code', country_code.value);
+            bodyFormData.append('mobile_no', mobile_no.value);
+            bodyFormData.append('password', password.value);
+            axios.post(api_base+'login.php', bodyFormData)
+                .then(function (response) {
+                    res = response.data
+                    console.log(res);
+                    if (res.status == 0) {
+                        btn_loading(login_btn, "", false)
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: res.msg, toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+
+                    }
+                    if (res.status == 1) {
+                        btn_loading(login_btn, "", true)
+                        Swal.fire({
+                            icon: 'success',
+                            title: res.msg, toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 5000,
+                            timerProgressBar: true,
+
+                        })
+
+                        // setting user data in local storage
+
+
+
+                        store.set('motap_user_data', {
+                            UID: res.UID,
+                            WIN_WALLET: res.WIN_WALLET,
+                            DEP_WALLET: res.DEP_WALLET,
+                            COUNTRY_CODE: res.COUNTRY_CODE,
+                            EMAIL: res.EMAIL,
+                            MOB_NUMBER: res.MOB_NUMBER,
+                            OW_ID: res.OW_ID,
+                            USERNAME: res.USERNAME,
+
+                        })
+
+                        setTimeout(() => {
+                            // moving towards play page 
+                            // location.replace(old_appw1_base+'play.html')
+                            location.href =old_appw1_base+'play.html'
+                        }, 3000);
+
+                    }
+                    if (res.status == -1) {
+                        btn_loading(login_btn, "🤣 Banned 🤣", true)
+                        Swal.fire({
+                            title: res.msg,
+                            html: res.reason,
+
+                        })
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+    </script>
+
+
+
+
+
+
+    <script>
+
+    </script>
+    <!-- <script>
+        document.getElementById("login_btn").addEventListener("click", function() {
+
+            let email_v = document.getElementById("login_id").value
+            let password_v = document.getElementById("password").value
+
+            if (!email_v) {
+                errorMessage('red', 'empty fields found');
+                return;
+            }
+            if (!password_v) {
+                errorMessage('red', 'Please enter password');
+                return;
+            }
+
+            console.log(store.get('motap_app_data').OW_ID);
+            var bodyFormData = new URLSearchParams();
+            bodyFormData.append('email_v', email_v);
+            bodyFormData.append('password_v', password_v);
+            bodyFormData.append('COUNTRY_CODE', store.get('motap_app_data').COUNTRY_CODE);
+            bodyFormData.append('OW_ID', store.get('motap_app_data').OW_ID);
+
+            axios.post('./api/login.php', bodyFormData)
+                .then(function(response) {
+                    console.log(response.data);
+                    // console.log(result);
+                    if (response.data['login_v'] == 1) {
+                        errorMessage('green', response.data['res_msg'])
+                        // setting user data in local storage
+
+
+
+                        store.set('motap_user_data', {
+                            UID: response.data.UID,
+                            WIN_WALLET: response.data.WIN_WALLET,
+                            DEP_WALLET: response.data.DEP_WALLET,
+                            COUNTRY_CODE: response.data.COUNTRY_CODE,
+                            EMAIL: response.data.EMAIL,
+                            MOB_NUMBER: response.data.MOB_NUMBER,
+                            OW_ID: response.data.OW_ID,
+                            USERNAME: response.data.USERNAME,
+
+                        })
+
+                        // moving towards play page 
+                        location.replace('./play.html')
+
+                    } else if (response.data['login_v'] == -1) {
+                        punishment_reason = response.data['punishment_reason'];
+                        punishment_days = response.data['punishment_days']
+
+                        location.replace("punishment.php?punishment_days=" + punishment_days +
+                            "&punishment_reason=" + punishment_reason);
+                    } else {
+                        errorMessage('red', response.data['res_msg'])
+                    }
+
+
+
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+
+
+        })
+    </script> -->
+
+</body>
+
+
+
+</html>
