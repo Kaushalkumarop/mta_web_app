@@ -3,7 +3,7 @@ if (location.host == "192.168.100.5") {
   var old_appw1_base="http://192.168.100.5/motap_test/appw1/"
 } else {
   var api_base = "https://alt.primexop.com/api.primexop.com/mta/web_app/";
-  var old_appw1_base="http://192.168.100.5/motap_test/op/"
+  var old_appw1_base="https://alt.primexop.com/motap/appw1/"
 
 }
 
