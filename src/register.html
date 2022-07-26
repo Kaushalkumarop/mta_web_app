@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <script>
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    if ((getCookie('APP_USER_ID'))) {
+
+        location.replace('index.php')
+
+    }
+</script> -->
+
+
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="Primexop  An esport tournament application for BGMI, PUBG, FREE FIRE & LUDO , start your own esport tournament management application">
+    <meta name="keywords"
+        content="battleground mobile india, battlemania, BGMI, bgmi tournament app source code, call of duty tournament app, esport tournament, fantasy league, Fortnite tournament App, freefire tournament app, Ludo tournament, PUBG Lite Tournament app, pubg matches organizer app, pubg tournament app" />
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!-- <link href="assets/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" />  -->
+    <!-- fontawesome kit added at bottom  -->
+    <!-- Own Stylesheets -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" /> -->
+
+    <!--<link rel="stylesheet" href="https://demowebapp.thebattlemania.com/assets/css/toastme.css"/>-->
+    <!-- <link rel="stylesheet" href="assets/css/toastr.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/passtrength.css" /> -->
+    <!-- <link href="../../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="./assets/css/primeOne.css">
+
+    <style type="text/css">
+        /* hide scrollbar but allow scrolling */
+        .content-section {
+            -ms-overflow-style: none;
+            /* for Internet Explorer, Edge */
+            scrollbar-width: none;
+            /* for Firefox */
+            overflow-y: scroll;
+        }
+
+        .content-section::-webkit-scrollbar {
+            display: none;
+            /* for Chrome, Safari, and Opera */
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="pxop-full-width pxop-full-height">
+        <div class="container-fluid">
+            <div class="row d-flex">
+                <div class="col-xl-6 col-left">
+                    <div class="pxop-modal">
+                        <div class="pxop-mdl-header text-center">
+
+                            <h4 style="width: 100%;" class="m-0 overmarquee">Welcome to <span id="app_name"><?php // echo $_COOKIE["MOTAP_OW_APP_NAME"];
+                                                                                                            ?></span>
+                            </h4>
+
+                        </div>
+                        <div class="pxop-mdl-center pxop-full-height pb-6">
+                            <div class="content-section">
+                                <div class="pxop-content-listing">
+                                    <div class="profile-content text-black">
+                                        <h6 class="mt-1"></h6>
+
+                                        <form method="POST" class="container profile-form mt-2" action="#" id="form"
+                                            autocomplete="off">
+
+                                            <br>
+                                            <div class="form-group row">
+                                                <div id="id_div" class="col-12">
+                                                    <label for="USERNAME">Username</label>
+                                                    <input type="text" id="USERNAME" name="Username"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder="Enter your Username here">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div id="id_div" class="col-12">
+                                                    <label for="EMAIL">Email</label>
+                                                    <input type="email" id="EMAIL" name="email"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder="Enter your Email here">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div id="id_div" class="col-12">
+                                                    <label for="MOB_NUMBER">Mobile Number</label>
+                                                    <input type="tel" id="MOB_NUMBER" name="Mobile Number"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder="Enter your 10 digit Mobile Number here"
+                                                        pattern="[0-9]{10}" maxlength="10">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div class="col-9">
+                                                    <label for="PASSWORD">Password</label>
+                                                </div>
+                                                <div class="col-9">
+
+                                                    <input type="Password" id="PASSWORD" name="PASSWORD"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder=" Enter your Password here" required>
+                                                </div>
+                                                <div class="col-3">
+                                                    <button id="PASSWORD_show_btn" type="button"
+                                                        onclick="pass_show_fun()"
+                                                        class="btn btn-block btn-green">Show</button>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="PASSWORD2">Re-type Password</label>
+                                                    <input type="Password" id="PASSWORD2" name="PASSWORD2"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder=" Enter your Password again" required>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div id="id_div" class="col-12">
+                                                    <label for="referral_code">Referral Code (optional)</label>
+                                                    <input type="text" id="referral_code" name="referral_code"
+                                                        class="form-control border-bottom rounded-0"
+                                                        placeholder="Enter your Referral Code here">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <p id="errort2" style="color: red;"></p> <br>
+
+                                            <div class="form-group row ">
+                                                <div class="col-12">
+                                                    <button type="button" id="register_btn"
+                                                        class="btn btn-block btn-green">REGISTER NOW</button>
+
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+                                        <div class="container profile-form mt-2">
+                                            <!-- <div class="form-group row">
+                                                <div id="btn_div" class="col-12">
+                                                    <button id="lw_btn" class="btn btn-block btn-lightpink">LOGIN WITH NUMBER</button>
+
+                                                </div>
+                                            </div> -->
+
+
+
+
+                                            <div class="form-group row">
+
+                                                <div class="col-12">
+                                                    <a id="cna_btn" href='login.html'
+                                                        class="btn btn-block btn-primary text-white">LOGIN WITH OLD
+                                                        ACCOUNT</a>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="form-group row">
+
+                                                <div class="col-12">
+                                                    <button id="cs_btn"
+                                                        onclick="location.href=old_appw1_base +'customer_support.php?back_url=login.html'"
+                                                        class="btn btn-block btn-secondary">CUSTOMER SUPPORT</button>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="text-center text-black">
+                                            <p>App Version : <span id="app_v"></span></p>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-right m-auto">
+                    <div class="pxop-right-content">
+                        <!-- <img src="https://cdn.discordapp.com/attachments/846358722158264370/846383414771974194/500w.png" alt="logo" class="img-fluid img-responsive"> -->
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/store.everything.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.4.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script> -->
+    <script src="assets/js/custom.js"></script>
+    <!-- <script src="assets/js/toastr.min.js"></script> -->
+    <!-- <script src="assets/js/jquery.validate.js"></script> -->
+    <!-- font awsom link  -->
+    <script src="https://kit.fontawesome.com/027708636b.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/primeOne.js"></script>
+
+
+    <script>
+        document.getElementById('app_name').innerHTML = store.get('motap_app_data').APP_NAME;
+        document.getElementById('app_v').innerHTML = store.get('motap_app_data').APP_V;
+        checkOverflowText()
+
+        // check already logged in user details
+
+        if (store.get('motap_user_data')) {
+            // moving towards play page 
+            location.href = old_appw1_base + 'play.html'
+
+        }
+    </script>
+
+
+
+    <script>
+        function errorMessage(c, t) {
+            Swal.fire({
+                icon: 'error',
+                title: t, toast: true,
+                position: 'top',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+        function pass_show_fun() {
+            PASSWORD_show_btn = document.getElementById('PASSWORD_show_btn')
+            PASSWORD = document.getElementById('PASSWORD')
+
+            console.log('triggered');
+
+            if (PASSWORD_show_btn.innerHTML == 'Show') {
+
+
+                PASSWORD.type = 'text'
+                PASSWORD_show_btn.innerHTML = 'Hide'
+
+
+            } else {
+                PASSWORD_show_btn.innerHTML = 'Show'
+                PASSWORD.type = 'password'
+            }
+
+
+        }
+
+
+        document.getElementById("register_btn").addEventListener("click", function () {
+
+            // getting all fields values
+
+            let USERNAME = document.getElementById("USERNAME").value.trim();
+            let EMAIL = document.getElementById("EMAIL").value.trim();
+            let MOB_NUMBER = document.getElementById("MOB_NUMBER").value
+            let PASSWORD = document.getElementById("PASSWORD").value
+            let PASSWORD2 = document.getElementById("PASSWORD2").value
+            let referral_code = document.getElementById("referral_code").value.trim();
+
+
+
+
+
+            // validations 
+            if (!USERNAME) {
+                errorMessage('red', 'Error: Empty fields found');
+                return;
+            }
+            if (!EMAIL) {
+                errorMessage('red', 'Error: Empty fields found');
+                return;
+            }
+            if (!MOB_NUMBER) {
+                errorMessage('red', 'Error: Empty fields found');
+                return;
+            }
+            if (!PASSWORD) {
+                errorMessage('red', 'Please enter password');
+                return;
+            }
+
+            if (PASSWORD != PASSWORD2) {
+                errorMessage('red', 'Password not match');
+                return;
+            }
+            // phone number validations
+            var phoneno = /^\d{10}$/;
+            if (!(MOB_NUMBER.match(phoneno))) {
+                errorMessage('red', 'Invalid Phone Number , 10 digit Number only');
+                return;
+            }
+            // email validations
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!(EMAIL.match(mailformat))) {
+                errorMessage('red', 'You have entered an invalid email address!');
+                return;
+            }
+
+            // username validations
+            var letterNumber = /^[0-9a-zA-Z]+$/;
+            if (!(USERNAME.match(letterNumber))) {
+                errorMessage('red', 'Invalid Username , Please input alphanumeric characters only');
+                return;
+            }
+
+
+
+
+
+            var bodyFormData = new URLSearchParams();
+            bodyFormData.append('USERNAME', USERNAME);
+            bodyFormData.append('EMAIL', EMAIL);
+            bodyFormData.append('COUNTRY_CODE', store.get('motap_app_data').COUNTRY_CODE);
+            bodyFormData.append('MOB_NUMBER', MOB_NUMBER);
+            bodyFormData.append('PASSWORD', PASSWORD);
+
+            bodyFormData.append('referral_code', referral_code);
+
+            bodyFormData.append('OW_ID', store.get('motap_app_data').OW_ID);
+
+            axios.post(api_base + 'register.php', bodyFormData)
+                .then(function (response) {
+                    console.log(response.data);
+                    if (response.data.status == 0) {
+                        errorMessage('red', `Error: ${response.data.res_msg}`);
+                    }
+
+                    if (response.data.status == 1) {
+                        errorMessage('green', response.data['res_msg'])
+                        // setting user data in local storage
+
+
+                        store.set('motap_user_data', {
+                            UID: response.data.UID,
+                            WIN_WALLET: response.data.WIN_WALLET,
+                            DEP_WALLET: response.data.DEP_WALLET,
+                            COUNTRY_CODE: response.data.COUNTRY_CODE,
+                            EMAIL: response.data.EMAIL,
+                            MOB_NUMBER: response.data.MOB_NUMBER,
+                            OW_ID: response.data.OW_ID,
+                            USERNAME: response.data.USERNAME,
+
+                        })
+
+                        // moving towards play page 
+                        location.href = old_appw1_base + 'play.html'
+                    }
+
+
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+
+
+        })
+    </script>
+
+</body>
+
+
+
+</html>
