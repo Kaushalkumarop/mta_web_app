@@ -1,1 +1,66 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Connecting...</title></head><body> <script src="index.59a8b773.js"></script> <script src="index.cfc55344.js"></script> <script src="index.4fd87021.js"></script> <script src="index.660efdf8.js"></script> <Script> /* reading query */ const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop), }); let u = params.u; function fetch_data_fun() { var bodyFormData = new URLSearchParams(); bodyFormData.append('u', u); url = api_base+'web_app_init.php'; axios.post(url, bodyFormData) .then(function (response) { res = response.data console.log(res); if (res.status == 0) { Swal.fire({ title: res.msg, html: 'Use valid link to Access Web App ', }) } if (res.status == 1) { store.set('motap_app_data', { APP_NAME: res.APP_NAME, OW_ID: res.OW_ID, APP_V: res.APP_V, PLAN: res.PLAN, COUNTRY_CODE: res.COUNTRY_CODE, }) location.href =old_appw1_base+'play.html' } if (res.status == -1) { } }) .catch(function (error) { console.log(error); }); } fetch_data_fun() </Script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting...</title>
+</head>
+
+<body>
+    <script src="index.cff61ba9.js"></script>
+    <script src="index.8ed54333.js"></script>
+    <script src="index.64ca01fb.js"></script>
+    <script src="index.0c8d6fa4.js"></script>
+    <Script>
+        /* reading query */
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        let u = params.u;
+
+        function fetch_data_fun() {
+            var bodyFormData = new URLSearchParams();
+            bodyFormData.append('u', u);
+
+
+            url = api_base+'web_app_init.php';
+
+
+            axios.post(url, bodyFormData)
+                .then(function (response) {
+                    res = response.data
+                    console.log(res);
+                    if (res.status == 0) {
+                        Swal.fire({
+                    title: res.msg,
+                    html: 'Use valid link to Access Web App ',
+
+                })
+                    }
+                    if (res.status == 1) {
+
+                        store.set('motap_app_data', {
+                            APP_NAME: res.APP_NAME,
+                            OW_ID: res.OW_ID,
+                            APP_V: res.APP_V,
+                            PLAN: res.PLAN,
+                            COUNTRY_CODE: res.COUNTRY_CODE,
+                        })
+
+                        location.href =old_appw1_base+'play.html'
+                    }
+                    if (res.status == -1) {
+
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        fetch_data_fun()
+    </Script>
+</body>
+
+</html>
