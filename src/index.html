@@ -15,6 +15,8 @@
     <script src="assets/js/sweetalert2.all.min.js"></script>
     <Script>
         /* reading query */
+
+
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
@@ -25,19 +27,17 @@
             bodyFormData.append('u', u);
 
 
-            url = api_base+'web_app_init.php';
 
-
-            axios.post(url, bodyFormData)
+            axios.post(api_base + 'web_app_init.php', bodyFormData)
                 .then(function (response) {
                     res = response.data
                     console.log(res);
                     if (res.status == 0) {
                         Swal.fire({
-                    title: res.msg,
-                    html: 'Use valid link to Access Web App ',
+                            title: res.msg,
+                            html: 'Use valid link to Access Web App ',
 
-                })
+                        })
                     }
                     if (res.status == 1) {
 
@@ -49,7 +49,7 @@
                             COUNTRY_CODE: res.COUNTRY_CODE,
                         })
 
-                        location.href =old_appw1_base+'play.html'
+                        location.href = old_appw1_base + 'play.html'
                     }
                     if (res.status == -1) {
 
