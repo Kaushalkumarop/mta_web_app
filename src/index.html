@@ -14,7 +14,7 @@
     <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/sweetalert2.all.min.js"></script>
     <Script>
-        // reading query
+        /* reading query */
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
